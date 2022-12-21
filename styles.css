@@ -1,0 +1,23 @@
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
+.grid-container {
+    display: grid;
+    grid-template-rows: auto;
+    background-color: #2196F3;
+    padding: 10px;
+    width: 300px;
+    height: 300px;
+  }
+  
+  
+.grid-item {
+    background-color: rgba(255, 255, 255, 1);
+    border: .01px solid rgba(80, 79, 79, 0.014);
+    font-size: 30px;
+    text-align: center;
+  }
