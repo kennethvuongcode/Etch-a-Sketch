@@ -3,15 +3,23 @@ body {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction: column;
     height: 100vh;
+    background-color: rgba(131, 230, 255, 0.336);
+    font-family: 'Courier New', Courier, monospace;
 }
+
+.UI {
+  display: flex;
+}
+
 .grid-container {
     display: grid;
     grid-template-rows: auto;
     background-color: #2196F3;
     padding: 10px;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
   }
   
   
@@ -21,3 +29,11 @@ body {
     font-size: 30px;
     text-align: center;
   }
+
+button {
+  background-color: aliceblue;
+  border: 1px solid rgb(98, 0, 255);
+  font-size: 20px;
+  width: 100px;
+  height: 50px;
+}

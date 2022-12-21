@@ -16,6 +16,9 @@ rainbowbtn.addEventListener('click', () => {hue = 'rainbow'; color()});
 const rampbtn = document.querySelector('#dark');
 rampbtn.addEventListener('click', () => {hue = 'dark'; color()});
 
+const eraserbtn = document.querySelector('#eraser');
+eraserbtn.addEventListener('click', () => {hue = 'eraser'; color()});
+
 addEventListener('mousedown', () => {
     counter = 1;
     console.log(counter);
@@ -58,6 +61,7 @@ function createGrid(size) {
 function color() {
     let canvasBlocks = canvas.querySelectorAll('div'); 
     let holder = '';
+    let check = '';
 
     canvasBlocks.forEach(div => {
         div.addEventListener('click', select)
@@ -80,16 +84,20 @@ function select() {
     switch(hue) {
         case 'black':
             this.style.backgroundColor = 'black';
-            console.log(1);
             break;
         case 'rainbow':
             this.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            console.log(2);
             break;
         case 'dark':
+            check = this.style.backgroundColor;
+            if (check == 'black')
+                break;
             holder = pSBC(-0.2,this.style.backgroundColor);
             this.style.backgroundColor = holder;
-            console.log(3);
+            console.log(this.style.backgroundColor)
+            break;
+        case 'eraser':
+            this.style.backgroundColor = '#ffffff';
             break;
 }}
 
@@ -98,16 +106,19 @@ function drag() {
     switch(hue) {
         case 'black':
             this.style.backgroundColor = 'black';
-            console.log(1);
-            break;x
+            break;
         case 'rainbow':
             this.style.backgroundColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            console.log(2);
             break;
         case 'dark':
+            check = this.style.backgroundColor;
+            if (check == 'black')
+                break;
             holder = pSBC(-0.2,this.style.backgroundColor);
             this.style.backgroundColor = holder;
-            console.log(3);
+            break;
+        case 'eraser':
+            this.style.backgroundColor = '#ffffff';
             break;
 }}
 }
